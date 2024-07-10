@@ -3,11 +3,22 @@
 import React from "react";
 import Link from "next/link";
 import ProductCard from "./components/ProductCard";
+import styles from './page.module.css'
 
 export default function Home() {
   return (
     <main>
-          <Link href="/users">Products</Link>
+          <nav className={styles.nav}>
+            <ul className={styles.ul}>
+                <li className={styles.li}>
+                <Link href="/users">Products</Link>
+                </li>
+                <li>
+                <Link href="/users/singleproduct">Get a Single Product</Link>
+                </li>
+            </ul>
+          </nav>
+
           <ProductCard />
      </main>
   );

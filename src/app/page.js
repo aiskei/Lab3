@@ -1,20 +1,14 @@
-import Link from "next/link";
+"use client";
 
-import { AppBar, Box, Toolbar, IconButton, Typography, Button, colors  } from "@mui/material";
+import React from "react";
+import Link from "next/link";
+import ProductCard from "./components/ProductCard";
 
 export default function Home() {
   return (
     <main>
-<Box sx={{ flexGrow: 1 }}>
-      <AppBar>
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <Link href="/users">Home</Link>
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </Box>
-
+          <Link href="/users">Products</Link>
+          <ProductCard />
      </main>
   );
 }

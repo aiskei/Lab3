@@ -19,6 +19,9 @@ export default function Home() {
                 <li>
                 <Link href="/users/lastchance">Last Chance</Link>
                 </li>
+                <li>
+                <Link href="/users/electronics">Electronics</Link>
+                </li>
             </ul>
           </nav>
 

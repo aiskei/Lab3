@@ -14,6 +14,9 @@ export default function Home() {
                 <Link href="/users">Products</Link>
                 </li>
                 <li>
+                <Link href="/users/womensclothing">Women</Link>
+                </li>
+                <li>
                 <Link href="/users/singleproduct">Get a Single Product</Link>
                 </li>
                 <li>

@@ -37,30 +37,32 @@ const ProductCard = () => {
                                 lg={4}
                             >
                                 <Card
+                                raised
                                     sx={{
-                                        maxWidth: 345,
-                                        boxShadow: 1,
-                                        borderRadius: 2,
-                                        m: 2
+                                        maxWidth: 355,
+                                        margin: "0 auto",
+                                        padding: "0.1em",
                                     }}
                                 >
                                     <CardMedia
-                                        sx={{ height: 140 }}
+                                        component="img"
+                                        height="250"
                                         image={product.image}
+                                        alt={"alt"}
+                                        sx={{ margin: "1em 1em 0 1em", objectFit: "contain" }}
                                         title="green iguana"
                                     />
                                 </Card>
                                 <Typography
+                                    marginLeft={4} pt={2}
                                     gutterBottom
-                                    variant="h5"
-                                    component="div"
+
                                 >
                                     {product.title}
                                 </Typography>
                                 <Typography
+                                    marginLeft={4} pb={4}
                                     gutterBottom
-                                    variant="h5"
-                                    component="div"
                                 >
                                     {product.price + ' kr.'}
                                 </Typography>

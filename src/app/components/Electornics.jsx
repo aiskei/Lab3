@@ -37,30 +37,29 @@ const WomensClothing = () => {
                                 lg={4}
                             >
                                 <Card
+                                raised
                                     sx={{
-                                        maxWidth: 345,
+                                        maxWidth: 440,
                                         boxShadow: 1,
                                         borderRadius: 2,
                                         m: 2
                                     }}
                                 >
                                     <CardMedia
-                                        sx={{ height: 140 }}
+                                        sx={{ height: 250 }}
                                         image={product.image}
                                         title="green iguana"
                                     />
                                 </Card>
                                 <Typography
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
+                                  marginLeft={4} pb={1}
+
                                 >
                                     {product.title}
                                 </Typography>
                                 <Typography
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
+                                    marginLeft={4} pb={3}
+
                                 >
                                     {product.price + ' kr.'}
                                 </Typography>

@@ -31,23 +31,27 @@ const SingleProductCard = () => {
                 <Grid container m={3}>
                     <Grid key={data.title} item xs={12} md={6} lg={4}>
                         <Card
-                            sx={{
-                                maxWidth: 345,
-                                boxShadow: 1,
-                                borderRadius: 2,
-                                m: 2
-                            }}
+                        raised
+                        sx={{
+                            maxWidth: 355,
+                            margin: "0 auto",
+                            padding: "0.1em",
+                        }}
                         >
                             <CardMedia
-                                sx={{ height: 140 }}
+                                component="img"
+                                height="350"
                                 image={data.image}
+                                alt={"alt"}
+                                sx={{ margin: "1em 1em 0 1em", objectFit: "contain" }}
                                 title="green iguana"
                             />
                         </Card>
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography marginLeft={4} pt={2}
+                        >
                             {data.title}
                         </Typography>
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography  marginLeft={4} pb={4}>
                             {data.price + ' kr.'}
                         </Typography>
                     </Grid>

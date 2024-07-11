@@ -11,16 +11,13 @@ export default function Home() {
           <nav className={styles.nav}>
             <ul className={styles.ul}>
                 <li className={styles.li}>
-                <Link href="/users">Products</Link>
+                <Link href="/users">All clothings</Link>
                 </li>
                 <li>
                 <Link href="/users/womensclothing">Women</Link>
                 </li>
                 <li>
                 <Link href="/users/mensclothing">Men</Link>
-                </li>
-                <li>
-                <Link href="/users/singleproduct">Get a Single Product</Link>
                 </li>
                 <li>
                 <Link href="/users/lastchance">Last Chance</Link>
@@ -30,6 +27,9 @@ export default function Home() {
                 </li>
                 <li>
                 <Link href="/users/jeweleries">Jewelery</Link>
+                </li>
+                <li>
+                <Link href="/users/singleproduct">Get a Single Product</Link>
                 </li>
             </ul>
           </nav>

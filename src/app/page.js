@@ -22,6 +22,9 @@ export default function Home() {
                 <li>
                 <Link href="/users/electronics">Electronics</Link>
                 </li>
+                <li>
+                <Link href="/users/jeweleries">Jewelery</Link>
+                </li>
             </ul>
           </nav>
 

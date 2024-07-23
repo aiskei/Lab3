@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ProductInfo from './ProductInfo';
 import {
     Container,
     Grid,
@@ -9,7 +10,12 @@ import {
 } from '@mui/material'
 
 const ProductCard = () => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const [showProductDetails, setProductDetails] = useState(false);
+    const [show, setShow] = useState(false);
+    const [item, setItem] = useState(null);
+
+
 
     //fetch data using useEffect hook
     useEffect(() => {
@@ -23,6 +29,11 @@ const ProductCard = () => {
             })
     }, [])
 
+    const handleClick = () => {
+        setProductDetails(!showProductDetails)
+        setShow(!show)
+    }
+
     return (
         <Container>
             <>
@@ -30,7 +41,7 @@ const ProductCard = () => {
                     {data.map(function (product) {
                         return (
                             <Grid
-                                key={product.title}
+                                key={product.id}
                                 item
                                 xs={12}
                                 md={6}
@@ -44,7 +55,7 @@ const ProductCard = () => {
                                         padding: "0.1em",
                                     }}
                                 >
-                                    <CardMedia
+                                    <CardMedia onClick={handleClick}
                                         component="img"
                                         height="250"
                                         image={product.image}
@@ -53,19 +64,28 @@ const ProductCard = () => {
                                         title="green iguana"
                                     />
                                 </Card>
-                                <Typography
+
+                                { showProductDetails ? <ProductInfo product={product} /> : ""}
+
+                               <>
+                               {!show &&
+                               <Typography
                                     marginLeft={4} pt={2}
                                     gutterBottom
 
                                 >
                                     {product.title}
+
                                 </Typography>
-                                <Typography
+                                }
+                                {!show && <Typography
                                     marginLeft={4} pb={4}
                                     gutterBottom
                                 >
-                                    {product.price + ' kr.'}
+                                    {product.price + ' SEK'}
                                 </Typography>
+                                }
+                               </>
                             </Grid>
                         )
                     })}

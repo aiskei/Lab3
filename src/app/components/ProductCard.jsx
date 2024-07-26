@@ -5,7 +5,6 @@ import {
     Grid,
     Card,
     CardMedia,
-    CardContent,
     Typography
 } from '@mui/material'
 
@@ -13,8 +12,6 @@ const ProductCard = () => {
     const [data, setData] = useState([]);
     const [showProductDetails, setProductDetails] = useState(false);
     const [show, setShow] = useState(false);
-    const [item, setItem] = useState(null);
-
 
 
     //fetch data using useEffect hook
@@ -25,11 +22,11 @@ const ProductCard = () => {
             })
             .then((data) => {
                 setData(data)
-                console.log(data)
             })
     }, [])
 
-    const handleClick = () => {
+    const handleClick = (item) => {
+        console.log(item)
         setProductDetails(!showProductDetails)
         setShow(!show)
     }
@@ -38,16 +35,16 @@ const ProductCard = () => {
         <Container>
             <>
                 <Grid container m={3}>
-                    {data.map(function (product) {
+                    {data.map(function (product, item) {
                         return (
                             <Grid
-                                key={product.id}
-                                item
+                                key={item}
+                                item={true}
                                 xs={12}
                                 md={6}
                                 lg={4}
                             >
-                                <Card
+                                <Card id="data-test-id" onClick={() => handleClick(product.id)}
                                 raised
                                     sx={{
                                         maxWidth: 355,
@@ -55,7 +52,7 @@ const ProductCard = () => {
                                         padding: "0.1em",
                                     }}
                                 >
-                                    <CardMedia onClick={handleClick}
+                                    <CardMedia
                                         component="img"
                                         height="250"
                                         image={product.image}
@@ -64,8 +61,17 @@ const ProductCard = () => {
                                         title="green iguana"
                                     />
                                 </Card>
-
-                                { showProductDetails ? <ProductInfo product={product} /> : ""}
+                                 <Card
+                                 raised
+                                    sx={{
+                                        maxWidth: 355,
+                                        margin: "0 auto",
+                                        padding: "0.1em",
+                                    }}>
+                                    {
+                                        showProductDetails &&  <ProductInfo product={product} />
+                                    }
+                                 </Card>
 
                                <>
                                {!show &&

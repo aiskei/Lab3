@@ -13,7 +13,6 @@ const ProductCard = () => {
     const [showProductDetails, setProductDetails] = useState(false);
     const [show, setShow] = useState(false);
 
-
     //fetch data using useEffect hook
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
@@ -25,8 +24,7 @@ const ProductCard = () => {
             })
     }, [])
 
-    const handleClick = (item) => {
-        console.log(item)
+    const handleClick = () => {
         setProductDetails(!showProductDetails)
         setShow(!show)
     }
@@ -44,7 +42,7 @@ const ProductCard = () => {
                                 md={6}
                                 lg={4}
                             >
-                                <Card id="data-test-id" onClick={() => handleClick(product.id)}
+                                <Card id="data-test-id" onClick={() => handleClick()}
                                 raised
                                     sx={{
                                         maxWidth: 355,
@@ -68,9 +66,11 @@ const ProductCard = () => {
                                         margin: "0 auto",
                                         padding: "0.1em",
                                     }}>
-                                    {
-                                        showProductDetails &&  <ProductInfo product={product} />
-                                    }
+                                        { showProductDetails &&
+                                        <ProductInfo
+                                            product={product}
+                                        />
+                                        }
                                  </Card>
 
                                <>

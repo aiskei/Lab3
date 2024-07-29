@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import {getByText, render, screen, waitFor} from '@testing-library/react'
+import {getByText, render, screen, waitFor, fireEvent, findAllByText, getByRole} from '@testing-library/react'
 import ProductCard from '@/app/components/ProductCard'
 import ProductInfo from '@/app/components/ProductInfo';
 import axios from 'axios';
